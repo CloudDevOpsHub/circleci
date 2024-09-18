@@ -5,14 +5,12 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: echo "Building the project..."
-      - run: |
-          if [ -f index.html ]; then
-            echo "Build successful!"
-          else
-            echo "Build failed: index.html not found."
-            exit 1
-          fi
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm test
 workflows:
   version: 2
   build-and-test:

@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn CircleCI</title>
+    <title>Button Click App</title>
+    <script>
+        function changeText() {
+            document.getElementById("message").innerHTML = "New text displayed!";
+        }
+    </script>
 </head>
 <body>
-    <h1>Cloud DevOps Hub!</h1>
-    <button>Click Me!</button>
+    <h1>Simple Web Application</h1>
+    <p id="message">Click the button to change this text.</p>
+    <button onclick="changeText()">Click Me</button>
 </body>
 </html>
