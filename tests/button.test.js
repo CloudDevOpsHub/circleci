@@ -5,7 +5,11 @@ describe('Button click test', () => {
   let page;
 
   beforeAll(async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    console.log("Browser launched successfully"); // Log browser status
     page = await browser.newPage();
     await page.goto(`file://${process.cwd()}/index.html`);
   });

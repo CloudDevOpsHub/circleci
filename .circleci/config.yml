@@ -6,10 +6,13 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install dependencies
+          name: Install Puppeteer Dependencies
+          command: apt-get update && apt-get install -yq libgconf-2-4
+      - run:
+          name: Install Dependencies
           command: npm install
       - run:
-          name: Run tests
+          name: Run Tests
           command: npm test
 workflows:
   version: 2
